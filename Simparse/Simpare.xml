@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Simparse</name>
+    </assembly>
+    <members>
+        <member name="T:Simparse.Backend.Controllers.FileController">
+            <summary>
+            CRUD Entrypoints for File Directories and File Items.
+            The File Directories and File Items are stored in a nested Parent - Children file structure.
+            Each node has it owns OCR Vector data or inherits that data from its parent node.
+            When nodes are moved or deleted this action is always applied to the children nodes as well.
+            </summary>
+        </member>
+        <member name="M:Simparse.Backend.Controllers.FileController.#ctor(Simparse.Identity.ISimparseUserStore,Simparse.Collections.IUserCollection,Simparse.Collections.IFileCollection,Microsoft.Extensions.Logging.ILogger{Simparse.Backend.Controllers.FileController},Simparse.FileStorage.IFileAccessStore,Simparse.Domain.IFieldMappingDomain)">
+            <summary>
+            Constructor CRUD File entry points
+            </summary>
+            <param name="userStore"></param>
+            <param name="userCollection"></param>
+            <param name="fileCollection"></param>
+            <param name="logger"></param>
+            <param name="filestore"></param>
+            <param name="fieldMappingDomain"></param>
+        </member>
+        <member name="M:Simparse.Backend.Controllers.FileController.GetFolders">
+            <summary>
+            Get a list of items that live under the umbrella of this parent Id.
+            If no parent Id is provided we will return all items from the root level.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Simparse.Backend.Controllers.FileController.GetFiles(System.String)">
+            <summary>
+            Get a list of items that live under the umbrella of this parent Id.
+            If no parent Id is provided we will return all items from the root level.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Simparse.Backend.Controllers.FileController.CreateFolder(Simparse.Models.File.CreateFolderRequest)">
+            <summary>
+            Create a new Directory in the tree.
+            If the Parent Id is not supplied this folder will go into the root directory.
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Simparse.Backend.Controllers.FileController.DeleteFile(System.String)">
+            <summary>
+            Delete a file or director item and all its potential children
+            </summary>
+            <param name="fileId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Simparse.Backend.Controllers.FileController.DeleteFolder(System.String)">
+            <summary>
+            Delete a folder or director item and all its potential children
+            </summary>
+            <param name="folderId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Simparse.Backend.Controllers.FileController.GetFileData(System.String,System.Int32,System.Int32)">
+            <summary>
+            Get the data for a individul file upload
+            </summary>
+            <param name="fileId"></param>
+            <param name="pageNumber"></param>
+            <param name="zoom"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Simparse.Backend.Controllers.FileController.UploadFile(System.String)">
+            <summary>
+            File Uploader
+            </summary>
+            <param name="chunkMetadata"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Simparse.Backend.Controllers.FileController.ExtensionDataCheck(System.String)">
+            <summary>
+            Helper method to get files extension as an enum
+            </summary>
+            <param name="extensionData"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Simparse.Backend.Controllers.IdentityController">
+            <summary>
+            Simparse User Identity Controller for the Simparse API
+            </summary>
+        </member>
+        <member name="M:Simparse.Backend.Controllers.IdentityController.#ctor(Simparse.Identity.ISimparseUserStore,Simparse.Collections.IUserCollection)">
+            <summary>
+            Identity Controller requires access to the user store and user data collections
+            </summary>
+            <param name="userStore"></param>
+            <param name="userCollection"></param>
+        </member>
+        <member name="M:Simparse.Backend.Controllers.IdentityController.Login(Simparse.Models.Identity.SimparseLoginRequest)">
+            <summary>
+            Login Request entry point that will respond with user id and refresh token
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Simparse.Backend.Controllers.IdentityController.Register(Simparse.Models.Identity.RegisterRequest)">
+            <summary>
+            Register request entry point that will respond with user id and refresh token
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Simparse.Backend.Controllers.IdentityController.ValidateToken(Simparse.Models.Identity.ValidateTokenRequest)">
+            <summary>
+            Validate an existing token and return a new token
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
