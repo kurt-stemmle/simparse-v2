@@ -33,7 +33,6 @@ namespace Simparse.Backend.Controllers
 
         private readonly ISimparseUserStore _userStore;
         private readonly IUserCollection _userCollection;
-        private readonly IFileCollection _fileCollection;
         private readonly ILogger<FileController> _logger;
         private readonly IFileAccessStore _fileStore;
         private readonly IFieldMappingDomain _fieldMappingDomain;
@@ -44,20 +43,17 @@ namespace Simparse.Backend.Controllers
         /// </summary>
         /// <param name="userStore"></param>
         /// <param name="userCollection"></param>
-        /// <param name="fileCollection"></param>
         /// <param name="logger"></param>
         /// <param name="filestore"></param>
         /// <param name="fieldMappingDomain"></param>
         public FileController(ISimparseUserStore userStore,
             IUserCollection userCollection,
-            IFileCollection fileCollection,
             ILogger<FileController> logger,
             IFileAccessStore filestore,
             IFieldMappingDomain fieldMappingDomain)
         {
             _userStore = userStore;
             _userCollection = userCollection;
-            _fileCollection = fileCollection;
             _logger = logger;
             _fileStore = filestore;
             _fieldMappingDomain = fieldMappingDomain;

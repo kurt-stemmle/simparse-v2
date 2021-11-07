@@ -6,7 +6,7 @@
       "applicationUrl": "https://localhost:5551;http://localhost:5553",
       "environmentVariables": {
         "ENV": "local",
-        "GOOGLE_APPLICATION_CREDENTIALS": "./simparse-49619fc42b84.json"
+        "GOOGLE_APPLICATION_CREDENTIALS": "./simparse-1ad16a7128b0.json"
       }
     }
   }

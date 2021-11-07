@@ -1,8 +1,6 @@
 ﻿using Google.Cloud.Storage.V1;
 using Google.Cloud.Vision.V1;
 using Google.Protobuf;
-using MongoDB.Bson;
-using MongoDB.Bson.Serialization.Attributes;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
