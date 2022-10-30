@@ -33,10 +33,10 @@ namespace Simparse
         public void ConfigureServices(IServiceCollection services)
         {
 
-            string mongoConnectionString = "mongodb+srv://simp-app:GdTB6aDASP2ivliB@simparse-u7o8i.gcp.mongodb.net/test?retryWrites=true&w=majority";
-            string mongoDBName = "simparse-backend";
-            string googleProjectId = "112470031764";
-            string googleIdentityAPIKey = "AIzaSyDhM0N-3JldWO-FfW7vRvDacsd8M8tXg5c";
+            string mongoConnectionString = "";
+            string mongoDBName = "";
+            string googleProjectId = "";
+            string googleIdentityAPIKey = "";
 
             MongoClientSettings settings = MongoClientSettings.FromConnectionString(mongoConnectionString);
             IMongoClient client = new MongoClient(settings);
